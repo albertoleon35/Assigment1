@@ -33,7 +33,21 @@ func squaredSums3(numbers: Array<Int?>) -> Int {
     return result;
 }
 
+func squaredSums4(numbers: Array<Int?>) -> Int? {
+    var result: Int? = 0;
+    for number in numbers {
+        let possibleInt:Int? = number as Int?;
+        if let tempInt = possibleInt {
+            if(tempInt != 0 && tempInt % 2 == 0) {
+                result! += (tempInt * tempInt);
+            }
+        }
+    }
+    return result;
+}
 
+//var integers1 = [1, nil, 0, 5, nil, 6];
+//var value1 = squaredSums4(numbers:integers1);
 
 //var integers1 = [1, 6, 0, 5, nil, 6];
 //var value1 = squaredSums3(numbers:integers1);
