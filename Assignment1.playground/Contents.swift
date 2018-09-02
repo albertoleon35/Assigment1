@@ -25,7 +25,7 @@ func squaredSums3(numbers: Array<Int?>) -> Int {
     for number in numbers {
         let possibleInt:Int? = number as Int?;
         if let tempInt = possibleInt {
-            if(tempInt != 0 && tempInt % 2 == 0 && tempInt is Int) {
+            if(tempInt != 0 && tempInt % 2 == 0) {
                 result += (tempInt * tempInt);
             }
         }
