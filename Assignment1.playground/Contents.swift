@@ -46,6 +46,18 @@ func squaredSums4(numbers: Array<Int?>) -> Int? {
     return result;
 }
 
+func squaredSums5(numbers: Array<Int?>) -> Int {
+    let result: Int = numbers.compactMap { $0 }.filter { $0 > 0 && ($0 % 2 == 0) }.reduce(0) {
+        (accumulation: Int, nextValue: Int) -> Int in
+        return accumulation + (nextValue * nextValue)
+    };
+    return result;
+}
+
+//var integers1 = [1, nil, 0, 5, nil, 6, 4, 8, 10];
+//var value1 = squaredSums5(numbers:integers1);
+//print(value1)
+
 //var integers1 = [1, nil, 0, 5, nil, 6];
 //var value1 = squaredSums4(numbers:integers1);
 
