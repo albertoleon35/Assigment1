@@ -2,6 +2,7 @@
 
 import UIKit
 
+//Question 1
 func squaredSums(numbers: [Int])  -> Int {
     var result = 0;
     for number in numbers {
@@ -10,6 +11,7 @@ func squaredSums(numbers: [Int])  -> Int {
     return result;
 }
 
+//Question 2
 func squaredSums2(numbers: [Int]) -> Int {
     var result = 0;
     for number in numbers {
@@ -20,6 +22,7 @@ func squaredSums2(numbers: [Int]) -> Int {
     return result;
 }
 
+//Question 3
 func squaredSums3(numbers: Array<Int?>) -> Int {
     var result: Int = 0;
     for number in numbers {
@@ -33,6 +36,7 @@ func squaredSums3(numbers: Array<Int?>) -> Int {
     return result;
 }
 
+//Question 4
 func squaredSums4(numbers: Array<Int?>) -> Int? {
     var result: Int? = 0;
     for number in numbers {
@@ -46,6 +50,7 @@ func squaredSums4(numbers: Array<Int?>) -> Int? {
     return result;
 }
 
+//Question 5
 func squaredSums5(numbers: Array<Int?>) -> Int {
     let result: Int = numbers.compactMap { $0 }.filter { $0 > 0 && ($0 % 2 == 0) }.reduce(0) {
         (accumulation: Int, nextValue: Int) -> Int in
@@ -54,6 +59,7 @@ func squaredSums5(numbers: Array<Int?>) -> Int {
     return result;
 }
 
+//Question 6
 func squaredSums6<T: Collection>(numbers: T) -> Int {
     var result : Int = 0;
     
@@ -105,8 +111,6 @@ func ==(lhs: Student, rhs: Student) -> Bool {
     return areEqual
 }
 
-
-
 //Question 8
 class PriorityQueue  {
     var students: Array<Student>;
@@ -135,47 +139,3 @@ class PriorityQueue  {
         return self.students.sorted(by: {$0.priority() > $1.priority()}).first;
     }
 }
-
-//var student = Student(name:"Jose", redid:814181960, units: 70, gpa: 3.5);
-//var student2 = Student(name:"Alberto", redid:814181961, units: 25, gpa: 4.0);
-//var student3 = Student(name:"Leon", redid:814181962, units: 50, gpa: 2.6);
-//let temp = student.priority();
-//
-//var students : Array<Student> = [student];
-//var priorityQueue = PriorityQueue(students: students);
-//priorityQueue.addStudent(student: student2);
-//priorityQueue.addStudent(student: student3);
-//print(priorityQueue.students.count);
-//let temp1 = priorityQueue.first();
-//print(temp1?.name);
-//print(priorityQueue.students.count);
-//print(priorityQueue.students);
-//let temp2 = priorityQueue.removeFirst();
-//print(temp2?.name);
-//print(priorityQueue.students);
-
-
-
-//var integers1 = [1, 6, 4, 8, 10];
-//var integers1: Set<Int> = [1,2,4,3,6]
-//var integers1: Dictionary<Int, Int> = [1:1, 4:5, 3:6];
-//var value1 = squaredSums6(numbers: integers1);
-//print(value1);
-
-//var integers1 = [1, nil, 0, 5, nil, 6, 4, 8, 10];
-//var value1 = squaredSums5(numbers:integers1);
-//print(value1)
-
-//var integers1 = [1, nil, 0, 5, nil, 6];
-//var value1 = squaredSums4(numbers:integers1);
-
-//var integers1 = [1, 6, 0, 5, nil, 6];
-//var value1 = squaredSums3(numbers:integers1);
-
-
-//var integers =  [1,3,0,5];
-//var value = squaredSums2(numbers:integers);
-
-
-//var integers2 =  [1,2,0,4];
-//var value2 = squaredSums(numbers:integers2);
