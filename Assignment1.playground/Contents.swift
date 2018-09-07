@@ -5,18 +5,21 @@ import UIKit
 //Question 1
 func squaredSums(numbers: [Int])  -> Int {
     var result = 0;
-    for number in numbers {
-        result += (number * number);
+    
+    numbers.forEach { (element) in
+        result += (element * element);
     }
+    
     return result;
 }
 
 //Question 2
 func squaredSums2(numbers: [Int]) -> Int {
     var result = 0;
-    for number in numbers {
-        if(number != 0 && (number % 2 == 0)) {
-            result += (number * number);
+    
+    numbers.forEach { (element) in
+        if(element != 0 && (element % 2 == 0)) {
+            result += (element * element);
         }
     }
     return result;
@@ -25,34 +28,32 @@ func squaredSums2(numbers: [Int]) -> Int {
 //Question 3
 func squaredSums3(numbers: Array<Int?>) -> Int {
     var result: Int = 0;
-    for number in numbers {
-        let possibleInt:Int? = number as Int?;
-        if let tempInt = possibleInt {
-            if(tempInt != 0 && tempInt % 2 == 0) {
-                result += (tempInt * tempInt);
-            }
+    
+    numbers.compactMap({$0}).forEach{(element) in
+        if(element != 0 && element % 2 == 0) {
+            result += (element * element);
         }
     }
+
     return result;
 }
 
 //Question 4
 func squaredSums4(numbers: Array<Int?>) -> Int? {
     var result: Int? = 0;
-    for number in numbers {
-        let possibleInt:Int? = number as Int?;
-        if let tempInt = possibleInt {
-            if(tempInt != 0 && tempInt % 2 == 0) {
-                result! += (tempInt * tempInt);
-            }
+    
+    numbers.compactMap({$0}).forEach{(element) in
+        if(element != 0 && element % 2 == 0), let tempResult = result {
+            result = tempResult + (element * element);
         }
     }
+    
     return result;
 }
 
 //Question 5
 func squaredSums5(numbers: Array<Int?>) -> Int {
-    let result: Int = numbers.compactMap { $0 }.filter { $0 > 0 && ($0 % 2 == 0) }.reduce(0) {
+    let result: Int = numbers.compactMap{ $0 }.filter { $0 > 0 && ($0 % 2 == 0) }.reduce(0) {
         (accumulation: Int, nextValue: Int) -> Int in
         return accumulation + (nextValue * nextValue)
     };
@@ -106,8 +107,8 @@ struct Student {
 
 extension Student: Equatable {}
 
-func ==(lhs: Student, rhs: Student) -> Bool {
-    let areEqual = lhs.redid == rhs.redid;
+func ==(leftHandStudent: Student, rightHandStudent: Student) -> Bool {
+    let areEqual = leftHandStudent.redid == rightHandStudent.redid;
     return areEqual
 }
 
